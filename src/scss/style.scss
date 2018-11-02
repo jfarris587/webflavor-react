@@ -1,0 +1,66 @@
+@import "vendors/main.css";
+@import "base/variables.scss";
+
+@import "base/variables.scss";
+@import "base/utilities.scss";
+
+@import "interactives/vehicle.scss";
+@import "interactives/card.scss";
+@import "interactives/ctr.scss";
+@import "interactives/dragdrop.scss";
+@import "interactives/touchdrop.scss";
+@import "interactives/hotspot.scss";
+@import "interactives/knowledgecheck.scss";
+@import "interactives/thumbnail.scss";
+@import "interactives/videoAudio.scss";
+@import "interactives/game.scss";
+@import "interactives/Modal.scss";
+
+@import "components/button.scss";
+@import "components/text.scss";
+
+@import "layout/container.scss";
+@import "layout/footer.scss";
+@import "layout/glossary.scss";
+@import "layout/help.scss";
+@import "layout/navigation.scss";
+@import "layout/resources.scss";
+@import "layout/splash.scss";
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+  height: 100%;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'GMGlobalSansCond';
+  color: $primary;
+}
+
+h1,h4{
+  font-size: 23px;
+  font-weight: 600;
+}
+
+li{
+  font-weight: 100;
+}
+
+p,span,li,ul,ol{
+  font-family: 'GMGlobalSansCond';
+}
+
+img{
+  width: 100%;
+}
