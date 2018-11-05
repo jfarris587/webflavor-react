@@ -12,6 +12,7 @@
   margin-right: 10px;
   position: relative;
   /*border:solid 2px #fff;*/
+  cursor: default;
   h4 {
     font-size: 30px;
     font-weight: 100;
@@ -38,7 +39,7 @@
   position: absolute;
   width: 100%;
   height: auto;
-  background: #383838;
+  background: $primary;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;

@@ -12,14 +12,14 @@
   position: relative;
   .hotSpot-img {
     width: 100%;
-    border: 2px solid #2b2b2b;
+    border: 2px solid $primary;
     border-radius: 10px;
   }
   .hotSpot-spot {
     font-size: 30px;
     line-height: 60px;
     text-align: center;
-    background: rgba(43, 43, 43, 0.8);
+    background: rgba($primary, 0.8);
     border: 1px solid #000;
     cursor: pointer;
     width: 60px;
@@ -67,7 +67,7 @@
     }
   }
   .hotSpot-close {
-    color: #2b2b2b;
+    color: $primary;
     font-size: 40px;
     float: right;
     margin-top: -45px;

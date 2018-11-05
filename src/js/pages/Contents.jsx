@@ -5,7 +5,8 @@ import four from '../pages/4_1';
 import five from '../pages/5_1';
 import six from '../pages/6_1';
 import seven from '../pages/7_1';
+import eight from '../pages/8_1';
 
-const Contents = [one,two,three,four,five,six,seven];
+const Contents = [one,two,three,four,five,six,seven,eight];
 
 export default Contents;

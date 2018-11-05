@@ -99,30 +99,6 @@ const layout =
       />
     </div>
   </div>
-
-  <div className="row margin-below">
-    <div className="col-sm-12">
-      <h4>VIDEO/AUDIO POPUPS</h4>
-    </div>
-    <div className="col-sm-6">
-      <div id="videoAudio-page-7"></div>
-    </div>
-    <div className="col-sm-6">
-      <div id="videoAudio-page-8"></div>
-    </div>
-  </div>
-
-  <div className="row margin-below">
-    <div className="col-sm-12">
-      <h4>VIDEO/AUDIO POPUPS</h4>
-    </div>
-    <div className="col-sm-6">
-      <div id="videoAudio-page-9"></div>
-    </div>
-    <div className="col-sm-6">
-      <div id="videoAudio-page-10"></div>
-    </div>
-  </div>
 </React.Fragment>;
 
 const Page = {

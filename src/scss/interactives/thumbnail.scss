@@ -62,7 +62,7 @@
       text-transform: uppercase;
       font-size: 20px;
       font-weight: 600;
-      color: #2b2b2b;
+      color: $primary;
     }
   }
   .caption {
@@ -74,13 +74,13 @@
       padding: 0 20px;
       margin: 1px;
       height: 80px;
-      background-color: #2b2b2b;
+      background-color: $primary;
       > span {
         font-weight: 100;
         font-size: 50px;
       }
       &.clicked {
-        color: #2b2b2b;
+        color: $primary;
         -webkit-animation-name: ctr-clicked;
         animation-name: ctr-clicked;
         -webkit-animation-duration: .5s;
@@ -107,7 +107,7 @@
       text-align: center;
       padding: 0 20px;
       height: 110px;
-      background-color: #2b2b2b;
+      background-color: $primary;
       > span {
         display: inline-block;
         vertical-align: middle;
