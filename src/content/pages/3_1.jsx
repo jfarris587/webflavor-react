@@ -1,5 +1,5 @@
 import React from "react";
-import FlipCard from "../components/FlipCard";
+import FlipCard from "../../js/interactives/FlipCard";
 
 const title = "FLIP CARDS";
 

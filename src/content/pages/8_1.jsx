@@ -12,7 +12,7 @@ const layout =
 
     <div className="row margin-below">
       <div className="offset-1 col-sm-4">
-        <a className="btn btn-default d-block mx-auto btn-complete" id="btnComplete" role="button">Complete for Credit</a>
+        <a className="btn btn-default d-block mx-auto btn-complete" id="btnComplete" role="button" onClick={()=>window.completeCourse()}>Complete for Credit</a>
       </div>
     </div>
 
@@ -24,7 +24,7 @@ const layout =
 
     <div className="row">
       <div className="offset-1 col-sm-4">
-        <a className="btn btn-default d-block mx-auto" href="https://www.gpstrategies.com" target="_blank">Take Survey</a>
+        <a className="btn btn-default d-block mx-auto" href="https://www.gpstrategies.com">Take Survey</a>
       </div>
     </div>
   </React.Fragment>

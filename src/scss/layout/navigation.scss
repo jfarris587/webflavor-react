@@ -80,21 +80,41 @@ nav.navbar .container{
 }
 
 #navbarMain {
-  &.default #navbarMobile .dropdown .dropdown-menu li {
-    background: #ccc;
-  }
-  #navbarMobile .dropdown .dropdown-menu li {
-    z-index: 100;
-    text-align: center;
-    background: #efefef;
-    border: 2px solid transparent;
-    width: 75%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 500;
-    margin-bottom: 0px !important;
-    border: none !important;
+  #navbarMobile .dropdown {
+    button {
+      background: #fff;
+      color: $primary;
+      outline: none;
+      border: none;
+      font-weight: 600;
+      font-size: 14px;
+
+      &:active, &:focus{
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .dropdown-menu{
+      width: 100%;
+
+
+      button{
+        width: 100%;
+        text-align: center;
+        position: relative;
+        left: -4%;
+        top: 5px;
+        background: none;
+        font-weight: 100;
+        background: #eee;
+
+        &:hover{
+          background: #e2e2e2;
+        }
+      }
+    }
   }
 }
 

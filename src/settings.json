@@ -8,38 +8,12 @@
     "menuStyle": "tab",
     "hasMenuLogo": false,
     "hasFooter": true,
-    "hasVehicleGame": true,
     "hasSplashPage": true,
-    "hasResources": true,
-    "hasGlossary": true,
-    "hasHelp": true,
-    "hasCountPages": true,
-    "hasInteractiveCompletion": true,
-    "courseStorageID": "htwfdwlcgs_0p70j",
-    "version": "2.6",
-    "contents": [
-      [
-        "1_1"
-      ],
-      [
-        "2_1"
-      ],
-      [
-        "3_1"
-      ],
-      [
-        "4_1"
-      ],
-      [
-        "5_1"
-      ],
-      [
-        "6_1"
-      ],
-      [
-        "7_1"
-      ]
-    ],
-    "cookieName": "htwfdwlcgs_0p70j"
+    "hasResources": false,
+    "hasGlossary": false,
+    "hasHelp": false,
+    "courseStorageID": "htwgs_f2d00",
+    "version": "3.1",
+    "cookieName": "htwgs_f2d00"
   }
 }

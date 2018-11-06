@@ -8,7 +8,7 @@ const Footer = (props) => {
   if(props.currentChapter === 0){
     nextBtn = "media/assets/btn_back_inactive.png";
   }
-  if(props.currentChapter === props.toc.length-1){
+  if(props.currentChapter === props.toc-1){
     backBtn = "media/assets/btn_next_inactive.png";
   }
 

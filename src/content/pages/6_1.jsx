@@ -1,5 +1,5 @@
 import React from "react";
-import Hotspot from "../components/Hotspot";
+import Hotspot from "../../js/interactives/Hotspot";
 
 const title = "HOTSPOTS";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import VideoAudio from '../components/VideoAudio';
+import VideoAudio from '../../js/interactives/VideoAudio';
 
 const title = "VIDEO & AUDIO";
 const videoAudio_1 = {

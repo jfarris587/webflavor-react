@@ -12,27 +12,14 @@ export default (state = trackingDefaultState, action) => {
   switch (action.type) {
     default:
       return tempState;
+
     case 'LOAD_LOCALSTORAGE':
       return action.payload.tracking;
-    case 'NEXT_PAGE':
-      tempState.currentPage+= 1;
-      Tracking.SetBookmark(tempState.currentChapter,tempState.currentPage);
-      return tempState;
-    case 'PREV_PAGE':
-      tempState.currentPage-= 1;
-      Tracking.SetBookmark(tempState.currentChapter,tempState.currentPage);
-      return tempState;
-    case 'NEXT_CHAPTER':
-      tempState.currentChapter+= 1;
-      Tracking.SetBookmark(tempState.currentChapter,tempState.currentPage);
-      return tempState;
-    case 'PREV_CHAPTER':
-      tempState.currentChapter-= 1;
-      Tracking.SetBookmark(tempState.currentChapter,tempState.currentPage);
-      return tempState;
+
     case 'OPEN_PAGE':
-      tempState.currentChapter = action.payload;
+      tempState.currentChapter = action.payload[0];
+      tempState.currentPage = action.payload[1];
       Tracking.SetBookmark(tempState.currentChapter,tempState.currentPage);
       return tempState;
-    }
+  }
 }

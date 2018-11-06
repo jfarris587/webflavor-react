@@ -1,7 +1,8 @@
 import React from "react";
-import Hotspot from '../components/Hotspot';
+import Hotspot from '../../js/interactives/Hotspot';
 
-const title = "WEBFLAVOR 3.0";
+const chapterTitle = "WEBFLAVOR 3.0";
+const title = "3.0 FRAMEWORK";
 
 const hotspot_1 = {
   img: 'media/img/City-Map-2.jpg',
@@ -150,6 +151,7 @@ const layout =
     </React.Fragment>;
 
 const Page = {
+  chapterTitle,
   title,
   layout,
 };

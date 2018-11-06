@@ -1,5 +1,5 @@
 import React from "react";
-import Ctr from "../components/Ctr";
+import Ctr from "../../js/interactives/Ctr";
 
 const title = "CLICK TO REVEALS";
 

@@ -27,7 +27,7 @@ export class Ctr extends Component {
     return (
       <div className={`ctr row ${this.props.ctr.position}`}>
         {sections.map((section,i)=>(
-          (<div key={i} className={`col-md-${width} p-0`}>
+          (<div key={i} className={`col-lg-${width} p-0`}>
             <Section
               index={i}
               section={section}

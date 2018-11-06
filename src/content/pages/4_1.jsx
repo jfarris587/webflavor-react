@@ -1,5 +1,5 @@
 import React from "react";
-import Thumbnail from "../components/Thumbnail";
+import Thumbnail from "../../js/interactives/Thumbnail";
 
 const title = "THUMBNAILS";
 

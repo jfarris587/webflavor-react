@@ -2,13 +2,13 @@
 <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
   <general>
     <catalogentry>
-      <catalog>htwfdwlcgs_0p70j</catalog>
+      <catalog>htwgs_f2d00</catalog>
       <entry>
-        <langstring>HTML Template: WebFlavor | Fully Dynamic Web Learning Course | GP Strategies</langstring>
+        <langstring>HTML Template: WebFlavor | GP Strategies</langstring>
       </entry>
     </catalogentry>
     <title>
-      <langstring>HTML Template: WebFlavor | Fully Dynamic Web Learning Course | GP Strategies</langstring>
+      <langstring>HTML Template: WebFlavor | GP Strategies</langstring>
     </title>
     <description>
       <langstring/>
