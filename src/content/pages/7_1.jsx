@@ -104,6 +104,7 @@ const layout =
   <div className="row">
     <div className="col-md-12">
       <p className="top-paragraph">The following is a knowledge check to test your understanding of the course so far. You must attempt the quiz before advancing.</p>
+
     </div>
   </div>
 

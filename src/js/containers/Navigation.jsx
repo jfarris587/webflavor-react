@@ -4,14 +4,7 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Nav} from 'reactstrap';
 
 import NavigationLinks from '../components/NavigationLinks';
 import NavigationItem from '../components/NavigationItem';
@@ -32,18 +25,36 @@ export class Navigation extends Component {
   }
   render(){
     return (
-      <div id="navContainer">
-        <Navbar color="light" light expand="md">
-          <NavbarToggler onClick={this.toggle} />
+      <div className="nav-container">
+        <Navbar color="light" dark expand="md">
+          <div className="nav-header container">
+
+            <div class="title">
+              <NavbarToggler onClick={this.toggle} />
+
+              <span class="titleMain">{this.props.TITLE}: </span>
+              <span class="titleSub">{this.props.SUB_TITLE}</span>
+            </div>
+          </div>
+
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
-                </NavItem>
-              <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-                </NavItem>
 
+              {this.props.chapters.map((chapter, index) =>{
+                let selected = false;
+                if(this.props.currentChapter === index){
+                  selected = true;
+                }
+                return (
+                  <NavigationItem
+                    key={index}
+                    c={index}
+                    chapter={chapter}
+                    openPage={this.props.openPage}
+                    selected={selected}
+                  />
+              );
+              })}
             </Nav>
           </Collapse>
         </Navbar>

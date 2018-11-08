@@ -11,9 +11,9 @@ export class Content extends Component {
 
   calculateHeight = () => {
     var windowHeight = window.innerHeight;
-    //var navHeight = document.getElementById("navContainer").offsetHeight;
+    var navHeight = document.getElementsByClassName("navbar")[0].offsetHeight;
     var footerHeight = document.getElementsByClassName("footer")[0].offsetHeight;
-    //document.getElementById("contentContainer").style.height = windowHeight - navHeight - footerHeight+1+"px";
+    document.getElementById("contentContainer").style.height = windowHeight - navHeight - footerHeight+1+"px";
   }
 
   render(){

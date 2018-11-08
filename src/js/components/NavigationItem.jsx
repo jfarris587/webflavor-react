@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 //import DropDown from '../components/DropDown';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
+import {
+  NavItem,
+  NavLink,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
 
 export class NavigationItem extends Component {
   constructor(props) {
@@ -18,21 +25,24 @@ export class NavigationItem extends Component {
 
 
   render(){
-    var selected;
+    var selected = "";
     if(this.props.selected){
       selected = "courseTitleChapterSelected";
     }
 
     if(this.props.chapter.length === 1){
       return (
-        <li className={`courseTitleChapter ${selected}`} id="courseTitleChapter0" onClick={() => this.props.openPage(this.props.c, 0)}>
-          <p className="nav-link">{this.props.chapter[0].title}</p>
-        </li>
+        <NavItem className={selected} onClick={()=>this.props.openPage(this.props.c, 0)}>
+          <NavLink>
+            {this.props.chapter[0].title}
+          </NavLink>
+        </NavItem>
+
       );
     }
     else{
       return (
-        <li className={`courseTitleChapter ${selected}`}>
+        <NavItem className={selected}>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle>{this.props.chapter[0].chapterTitle}</DropdownToggle>
 
@@ -42,10 +52,24 @@ export class NavigationItem extends Component {
               ))}
             </DropdownMenu>
           </Dropdown>
-        </li>
+        </NavItem>
       );
     }
   }
 }
+
+/*
+<li className={`courseTitleChapter ${selected}`}>
+  <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+    <DropdownToggle>{this.props.chapter[0].chapterTitle}</DropdownToggle>
+
+    <DropdownMenu>
+      {this.props.chapter.map((chapter, p) =>(
+        <DropdownItem key={p} onClick={()=>this.props.openPage(this.props.c, p)}>{chapter.title}</DropdownItem>
+      ))}
+    </DropdownMenu>
+  </Dropdown>
+</li>*/
+
 
 export default NavigationItem;

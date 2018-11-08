@@ -1,111 +1,135 @@
-//////////////////////////////////////////////////////////////////////
-//
-//     NAVIGATION SCSS
-//      - Styles for Navigation bar
-//
-//////////////////////////////////////////////////////////////////////
-
-nav.navbar .mobile-container{
-
-  .titles__wrapper{
-    display: block;
-    float: left;
-    width: 62%;
-    margin-top: 7px;
-
-  }
-
-  .links-container{
-    float: left;
-    width: 38% !important;
-  }
-}
-
-nav.navbar .container{
+nav.navbar{
+  padding: 0;
+  max-width: 100%;
   display: flex;
+  flex-direction: column;
+  background: $primary !important;
 
-  .title-container{
-    width: 75%;
-    float: left;
-
-    .navbar-brand{
-      float: left;
-    }
-
-    .titles__wrapper{
-    }
-  }
-
-  .links-container{
-    width: 25%;
-
-  }
-}
-
-.dropdown-menu {
-  min-width: 0rem;
-}
-
-.dropdown-link-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-#navbar {
-  .navbar-brand {
+  .nav-header{
+    width: 100%;
     padding: 0;
-    position: relative;
-    top: 3px;
-    margin: 0;
-    margin-right: 10px;
+    display: flex;
+    justify-content: flex-start;
 
-    img{
-      width: 100%;
+    .navbar-toggler{
+      border: none;
+      top: -5px;
+      position: relative;
+
+      &:active, &:focus{
+        outline: none;
+      }
+    }
+
+    .title{
+      background:none;
+
+      .titleMain{
+        font-weight: 100;
+        font-size: 28px;
+        color: #fff;
+        line-height: 50px;
+        text-transform: uppercase;
+      }
+
+      .titleSub{
+        font-weight: 600;
+        font-size: 28px;
+        color: #fff;
+        line-height: 0px;
+        text-transform: uppercase;
+      }
     }
   }
-  .logo-mobile {
-    padding: 0;
-    position: relative;
-    top: -1px;
+
+  .navbar-collapse{
     margin: 0;
-  }
-}
+    padding: 0;
+    background: #fff;
+    width: 100%;
 
-#navbar-left > #navbar {
-  margin-top: 90px;
-}
 
-#navContainer .container {
-  position: relative;
-}
-
-#navbarMain {
-  #navbarMobile .dropdown {
-    button {
+    .navbar-nav{
+      margin: 0 auto;
       background: #fff;
+      text-align: center;
+      width: 100%;
+      display: flex;
+
+      .nav-item{
+        flex: 1;
+      }
+    }
+  }
+}
+
+.nav-item{
+  cursor: default;
+  display: inline-block;
+  font-weight: 600;
+  height: 50px;
+  position: relative;
+  padding: 0px 0px 0px 10px !important;
+  font-size: 14px;
+  border-bottom: 3px solid transparent;
+
+  &.courseTitleChapterSelected{
+    border-bottom: 3px solid $primary;
+  }
+
+  &:not(:first-child):after {
+    content: "/";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-weight: 100;
+    font-size: 30px;
+    color: $primary;
+  }
+
+  .nav-link{
+    color: $primary !important;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 15px;
+  }
+}
+
+.nav-item{
+  .dropdown {
+    button {
+      cursor: default !important;
+      background: none;
       color: $primary;
       outline: none;
       border: none;
       font-weight: 600;
       font-size: 14px;
+      line-height: 28px;
 
       &:active, &:focus{
         border: none;
         outline: none;
-        box-shadow: none;
+        box-shadow: none !important;
+        background: none !important;
+        color: $primary !important;
       }
     }
 
     .dropdown-menu{
       width: 100%;
+      box-shadow: none;
+      border: none;
+      background: none;
+      left: -12% !important;
+      top: -12px !important;
 
 
       button{
         width: 100%;
         text-align: center;
-        position: relative;
-        left: -4%;
-        top: 5px;
         background: none;
         font-weight: 100;
         background: #eee;
@@ -113,473 +137,94 @@ nav.navbar .container{
         &:hover{
           background: #e2e2e2;
         }
+
+        &:active, &:focus{
+          background: #eee !important;
+        }
       }
     }
   }
 }
 
-.default #navbarMobile {
-  .dropdown p {
-    margin: 0;
-    color: #fff;
-    padding: .5rem 1rem;
-  }
-  .courseTitleChapterSelected p {
-    margin: 0;
-    color: #fff;
-  }
-  .courseTitleChapter {
-    padding: 0 !important;
-    p {
-      margin: 0;
-      color: #fff;
-      padding: .5rem 1rem !important;
-    }
-  }
-}
-
-#navbarMain #navbarMobile .dropdown .dropdown-menu li:after {
-  content: "" !important;
-}
-
-#navbarMobile .dropdown .dropdown-menu {
-  border: none;
-  padding: 0;
-  li {
-    background: $primary;
-  }
-}
-
-#navbarMain #navbarMobile .dropdown {
-  .dropdown-menu li a {
-    color: #000;
-  }
-  p {
-    padding: 0;
-  }
-  .dropdown-menu li {
-    a:hover {
-      text-decoration: none;
-    }
-    &:hover {
-      text-decoration: none;
-      font-weight: 600;
-    }
-  }
-}
-
-/* NAVBAR MAIN CONTAINER */
-nav {
-  .courseTitleChapter p {
-    margin: 0;
-  }
-  &.navbar {
-    background-color: $primary;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 0;
-    min-height: auto;
-    padding: 0;
-    &#navbarBottom {
-      background-color: #618eb5;
-    }
-  }
-}
-
-.navbar-header {
-  float: none;
-  width: 100%;
-}
-
-/* NAVBAR LEFT SECTION/HEADER - LOGO, TITLE */
-.navbar-toggler {
-  position: relative;
-  top: -4px;
-  border: none;
-  opacity: .5;
-  &:hover {
-    opacity: 1;
-  }
-  &:focus {
-    outline: none;
-  }
-}
-
-.navbar-header {
-  .navbar-brand {
-    color: #fff;
-    padding: 0 40px;
-    height: 80px;
-    margin-top: 0;
-    margin-bottom: 0;
-    position: relative;
-    right: 0;
-    top: 0;
-    float: left;
-  }
-  .title-container {
-    float: left;
-    margin-left: 15px !important;
-
-    .titles-wrapper{
-      &-main{
-
-      }
-    }
-  }
-  #titleMain {
-    display: inline-block;
-    position: relative;
-    margin-right: 10px;
-  }
-  .navmenu {
-    color: #fff;
-    line-height: 36px;
-  }
-}
-
-/*LEFT NAVBAR*/
-.left-nav {
-  float: left;
-  height: calc(100vh - 50px);
-  position: relative;
-  width: 16%;
-  max-width: 230px;
-  display: flex;
-  flex-flow: column;
-}
-
-.left-nav-text#subTitle {
-  font-size: 22px;
-  line-height: 0;
-}
-
-.left-nav-drop#navbarMobile li {
-  font-size: 18px;
-}
-
-@media only screen and (min-width: 768px) {
-  .navbar-collapse.collapse {
-    /*display:  none !important; REMOVED FOR BOOTSTRAP 4*/
-    &.in {
-      display: block !important;
-    }
-  }
-}
-
-/* COLLAPSABLE PART OF NAV BAR - CONTAINER */
-.navbar-collapse {
-  border: none;
-  background-color: #cccccc;
-  color: #fff;
-  font-size: 16px;
-  text-align: center;
-  &.collapsing .navbar-nav, &.in .navbar-nav {
-    width: 100%;
-  }
-}
-
-/* COLLAPSABLE PART OF NAV BAR - LINK LIST ON RIGHT */
-.page-assist {
-  margin-right: 0;
-  > {
-    li > a {
-      &:active, &:focus, &:hover {
-        background-color: $primary;
-      }
-      color: #fff !important;
-      line-height: 50px;
-      font-weight: 600;
-      padding: 0;
-      font-size: 28px;
-      &:focus, &:hover {
-        color: #fff;
-      }
-    }
-    .active > a {
-      color: #fff;
-      &:focus, &:hover {
-        color: #fff;
-      }
-    }
-  }
-}
-
-/* COLLAPSABLE PART OF NAV BAR - MOBILE NAV DROPDOWM */
-.navbar-collapse {
-  > .nav > li {
-    font-size: 22px;
-  }
-  #nav-items-bottom-row > li {
-    color: #fff;
-  }
-}
-
-/* COLLAPSABLE PART OF NAV BAR - BOTTOM NAV BAR */
-
-/* INDIVIDUAL MENU ITEMS */
-#navbarMobile {
-  width: 100%;
-  margin: 0 auto;
-  background: #632121;
-  .nav-link {
-    color: $primary;
-  }
-  li {
-    cursor: pointer;
-    width: 100%;
-  }
-}
-
-li {
-  &.courseTitleChapter {
-    display: block;
-  }
-  &.courseTitleChapterSelected {
-    background-color: $primary;
-  }
-}
-
-p {
-  &.courseTitleGated, &.courseTitleGatedPage {
-    opacity: .35;
-  }
-}
-
-/* COLLAPSABLE PART OF NAV BAR - BOTTOM NAV BAR */
-.navbar-collapse #nav-items-bottom-row > li {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  cursor: pointer;
-}
-
-/* LEFT NAVIGATION MENU */
-.headerLinks li {
-  &:not(:last-child) {
-    //margin-right: 20px;
-  }
-  a {
-    font-size: 20px;
-    font-weight: 500;
-    opacity: .7;
-    &:hover, &:active, &:focus {
-      opacity: 1;
-      text-decoration: none;
-      background: none;
-    }
-  }
-}
-
-.navbar-fixed-left .toggled {
-  left: 0px !important;
-}
-
-/* TABBED NAVIGATION STYLES */
-.tabbed {
-  background: #fff !important;
-  #navbarMobile {
-    display: flex;
-    flex-flow: row;
-    position: relative;
-    width: 100% !important;
-    max-width: 1450px;
-    margin: 0 auto;
-    .courseTitleChapter {
-      display: inline-block;
-      background: #fff;
-      color: #000;
-      font-weight: 600;
-      height: 50px;
-      position: relative;
-      padding: 0px 0px 0px 10px !important;
-      font-size: 14px;
+@media(max-width: 767px){
+  .nav-item{
+    &.courseTitleChapterSelected{
       border-bottom: 3px solid transparent;
-    }
-    li {
-      p {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        line-height: 15px;
-      }
-      &.courseTitleChapterSelected {
-        background: #fff;
-        border-bottom: 3px solid $primary;
-      }
-      &:not(:first-child):after {
-        content: "/";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        font-weight: 100;
-        font-size: 30px;
-        color: #8f9193;
-      }
-    }
-    .dropdown .dropdown-menu {
-      z-index: 100;
-      padding: 0;
-      margin: 0;
-      border: none;
-      position: relative;
-      left: -1%;
-      top: 3px;
-      background: none;
-    }
-  }
-}
-
-/* LEFT NAVIGATION STYLES */
-.leftNav {
-  #navbarMobile .courseTitleChapter p {
-    font-size: 22px;
-    font-weight: 100;
-    padding: 6px 0 6px 0 !important;
-  }
-  #navbarMain {
-    position: fixed;
-    left: -400px;
-    top: 50px;
-    width: 400px;
-    z-index: 500;
-    transition: all 600ms ease;
-  }
-}
-
-/* MOBILE STATES */
-@media only screen and (min-width: 991px) {
-  .logo-mobile {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .navbar-collapse > ul > li {
-    padding: 5px 0;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  nav.navbar .container {
-    padding: 0;
-    .mobile-container {
-      padding: 0;
-    }
-    .navbar-toggler {
-      top: -3px;
-    }
-  }
-  #titleMainMobile, #subTitleMobile {
-    font-size: 17px;
-    color: white;
-  }
-}
-
-@media only screen and (max-width: 991px) {
-  .navbar-header .navbar-brand {
-    padding-left: 0;
-  }
-  .navbar-default .navbar-collapse {
-    background-color: #618eb5;
-  }
-}
-
-.chapterSelected, .chapterNotSelected {
-  color: #ffffff;
-  font-size: 1.2em;
-}
-
-.chapterTitle {
-  cursor: pointer;
-}
-
-/*Navigation Secondary Color */
-.navbar-collapse {
-  border: none;
-}
-
-/*  Navigation Tabs Verion */
-.tabbed #navbarMobile {
-  max-width: 1650px;
-  li {
-    font-weight: 600;
-    height: 50px;
-    font-size: 14px;
-  }
-}
-
-/*Dropdown Navigation*/
-#navbarMain #navbarMobile .dropdown .dropdown-menu li {
-  border: 2px solid transparent;
-  width: 100%;
-  display: block;
-  font-weight: 500;
-  margin-bottom: 1px;
-  &:hover {
-    font-weight: 600;
-  }
-}
-
-@media (max-width: 1350px) {
-  .tabbed #navbarMobile li {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 991px) {
-  .tabbed {
-    display: block;
-  }
-}
-
-/*
-@media (max-width: 991px) {
-  .tabbed #navbarMobile {
-    display: block;
-    width: 100% !important;
-    margin: 0 auto;
-    li {
-      font-weight: 200;
-      line-height: 30px;
-      height: 30px;
-      position: relative;
-      p {
-        padding: 0 !important;
-        line-height: 30px !important;
-      }
-    }
-    .dropdown-menu {
-      left: 0 !important;
-      top: 0 !important;
-      li p {
-        background: #fff !important;
-        color: $primary;
-      }
-    }
-    .dropdown p {
-      margin: 0;
-      color: #fff;
-      padding: .5rem 1rem;
-    }
-    .courseTitleChapter {
-      padding: 0 !important;
       background: $primary;
-      p {
-        margin: 0;
-        color: #fff;
-        padding: .5rem 1rem !important;
+      .nav-link{
+        color: #fff !important;
+      }
+
+      .dropdown > button{
+        color: #fff !important;
       }
     }
-    .courseTitleChapterSelected p {
-      color: $primary;
+
+    &:not(:first-child):after {
+      content: "";
+
     }
-    li {
-      &:not(:first-child):after {
-        content: "";
+  }
+
+  .nav-item{
+    .dropdown {
+      button {
+
+        &:active, &:focus{
+          border: none;
+          outline: none;
+          box-shadow: none !important;
+          background: none !important;
+          color: $primary !important;
+        }
       }
-      width: 100%;
+
+      .dropdown-menu{
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        background: none;
+        position:  !important;
+        left: 0 !important;
+        top: 0 !important;
+
+
+        button{
+          width: 100%;
+          text-align: center;
+          background: none;
+          font-weight: 100;
+          background: #eee;
+
+          &:hover{
+            background: #e2e2e2;
+          }
+
+          &:active, &:focus{
+            background: #eee !important;
+          }
+        }
+      }
     }
   }
 }
-*/
+
+@media (max-width: 500px) {
+  nav.navbar{
+    .nav-header{
+      .title{
+        .navbar-toggler{
+          top: 0px;
+        }
+
+        .titleMain{
+          font-size: 16px;
+        }
+
+        .titleSub{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
