@@ -18,11 +18,14 @@ const json = SETTINGS.settings;
 
 export class App extends Component {
   componentWillMount() {
+    //Before Rendering, start LMS and start up the app
     Tracking.StartLMS();
     this.startApp();
   }
 
   componentDidMount() {
+    //After rendering, check to see if cookies/LMS has bookmarked a page
+    //If so, open that page via redux
     var BOOKMARK = Tracking.GetBookmark();
 
     if(BOOKMARK){
@@ -44,6 +47,8 @@ export class App extends Component {
   }
 
   startApp = async () => {
+    //Check to see if a LocalStorage exists already with the courseStorageID
+    //If so, don't init the app state, instead just copy localStorage over to redux
     if(json.mode === "DEV"){
       localStorage.clear();
     }
@@ -111,6 +116,7 @@ export class App extends Component {
   }
 
   setGlossaryState = () => {
+    //Set Redux state from the imported Glossary Object
     this.props.dispatch({
       type: "SET_GLOSSARY",
       payload: Glossary
@@ -118,6 +124,7 @@ export class App extends Component {
   }
 
   setResoucesState = () => {
+    //Set Redux state from the imported Resources Object
     this.props.dispatch({
       type: "SET_RESOURCES",
       payload: Resources
@@ -125,6 +132,7 @@ export class App extends Component {
   }
 
   setSplashState = () => {
+    //Set Redux state from the imported Splash Object
     this.props.dispatch({
       type: "SET_SPLASH",
       payload: Splash

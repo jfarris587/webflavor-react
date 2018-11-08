@@ -14,7 +14,5 @@ export default (state = settingsDefaultState, action) => {
       return action.payload;
     case 'LOAD_LOCALSTORAGE':
       return action.payload.settings;
-    case 'NEXT_PAGE':
-      return tempState;
   }
 }

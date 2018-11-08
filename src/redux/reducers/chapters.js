@@ -11,7 +11,6 @@ export default (state = chaptersDefaultState, action) => {
       return action.payload;
     case 'LOAD_LOCALSTORAGE':
       return action.payload.chapters;
-    case 'NEXT_PAGE':
-      return tempState;
+
   }
 }

@@ -12,7 +12,6 @@ export default (state = trackingDefaultState, action) => {
   switch (action.type) {
     default:
       return tempState;
-
     case 'LOAD_LOCALSTORAGE':
       return action.payload.tracking;
 

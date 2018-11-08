@@ -203,7 +203,7 @@ export default Page;
 
 In order to properly export the pages to the app, the Contents.jsx flie is necessary (It is like navigation.xml from the first iterations of WebFlavor). All it does is simply import every page, then export an array of arrays of those imports.
 
-Remembering what each export was [a JSON object] the export from this Contents.jsx will be an array of arrays of objects. The array itself represents a "table of contents" for the app. Every element is one chapter. Within each chapter could be multiple pages, thus another array.
+Remembering what each export was [a JSON object], the export from this Contents.jsx will be an array of arrays of objects. The array itself represents a "table of contents" for the app. Every element is one chapter. Within each chapter could be multiple pages, thus another array.
 
 ***Future iterations of WebFlavor may want to automize this process.***
 
@@ -232,29 +232,25 @@ const Contents = [
 export default Contents;
 ```
 
+## Redux Architecture
+The next fundamental block is Redux and its role in WebFlavor. As discussed, it is a state container that holds the overall state [settings] of the app. Any changes to the state go through Redux. After learning redux, you will see the concept of **Reducers**. WebFlavor is broken up into several reducers:
 
+- **settings** - Main settings of the app set in settings.json
+- **chapters** - The Array of Chapters containing page data
+- **glossary** - Glossary data
+- **resources** - Resources data
+- **splash** - Splash page data
+- **tracking** - Tracking which page is the current page
 
+Most of the reducers are set at the beginning of the app being started, and don't change much afterwards (but are still used throughout different components of the app). Only the tracking reducer changes significantly since it holds the currentPage and currentChapter variables.
 
-.
-.
-.
-.
-.
-.
-.
-.
-.
+Each reducer has actions that when received, change its state accordingly. To trigger these state changes, actions need to be dispatched vi:
 
-.
-.
-.
+```
+this.props.dispatch({
+  type: "SET_SPLASH",
+  payload: Splash
+});
+```
 
-.
-.
-.
-.
-.
-.
-.
-.
-.
+The initial app state is show in the console.log at the start of the course. If the developer wishes to see it on every state change, they can console.log() the state from index.js within the subscribe method.
