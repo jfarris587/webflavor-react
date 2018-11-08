@@ -80,7 +80,7 @@ webflavor
 
 **src:** The src directory is the main directory that developer is concerned about. It is where all the development occurs, react/redux/js as well as scss files.
 
-### Development Architecture
+#### Development Architecture
 
 The development architecture [directories within src] are the most important note from this section. Understanding this will help understand how WebFlavor itself is organized. The following is the directory layout of the src folder.
 
@@ -134,3 +134,127 @@ The architecture is fairly self-explanatory without getting into the code.
 **redux:** The redux directory is responsible for the overall state of the app, it contains the reducers, and the store.
 
 **scss:** The scss directory is the scss for the app. Within the directory variables can be changed to change the theme. If WebFlavor is to be customized for a specific style, this is done here.
+
+
+## JS Architecture
+
+The following section explains more in detail the architecture and code of the JS directory. This directory is the key foundation of the app, responsible for loading the state, and rendering the UI. It is broken into three other directories.
+
+```
++---js
+¦   +---components
+¦   +---containers
+¦   +---interactives
+```
+
+The **components and containers** directory follows the React code-pattern of functional vs container components or state vs stateless components. The **containers** are the main overall pieces of the app: navigation, footer, content, etc. While the **components** are smaller repeating elements that are used in each one. For example, the Navigation elements are components inside the Navigation container.
+
+The **interactives** directory is home to all the interactive classes which represent the interactive components: hotspots, flipcards, ctr, etc.
+
+**The most important container is the App container**, which is the parent. In addition, its React Lifecycle methods start the app by pulling the data from the content directory, initializing the redux state, and proceeding to render everything once completed.
+
+## Content Architecture
+
+The next important directory to understand is the content directory, which is where the courses content lives. I previous iterations of WebFlavor, XML was used, however, now exported JSON objects in JSX files are used.
+
+### Pages
+
+Below is an example of one page. Imported is React, which should always be the case, but the Hotspot is also imported since it is used on this particular page. **const layout** is the variable is the layout of the page, using bootstrap grid and any html content you wish to add [since it is React, you must use JSX equivalent of HTML].
+
+To add interactive components, after importing it, you will need a variable to set its data. You can see the ```<Hotspot />``` component is added wherever desired in the layout. In addition, it needs its specific data passed as a prop via the hotspot prop. We set the data to whatever we like in the variable ```const hotspot_1``` then pass it to the prop. [in this example it is blank]
+
+Every interactive has a predefined object for the data, and can be seen on the demo pages. To appropriately render the interactive, it must maintain that structure. In conclusion, this is what the page jsx file looks like. All the variables you set, then are exported as a JSON object.
+
+```
+import React from "react";
+import Hotspot from '../../js/interactives/Hotspot';
+
+const chapterTitle = "WEBFLAVOR 3.0";
+const title = "3.0 FRAMEWORK";
+
+const hotspot_1 = {}
+
+const layout =
+    <React.Fragment>
+      <div className="row margin-below">
+        <div className="col-lg-6">
+          <h1>ADAPTABLE INTERACTIVES</h1>
+          <p>One of the key features of WebFlavor...</p>
+        </div>
+
+        <div className="col-lg-6">
+          <Hotspot
+            hotspot={hotspot_1}
+          />
+        </div>
+      </div>
+    </React.Fragment>;
+
+const Page = {
+  chapterTitle,
+  title,
+  layout,
+};
+
+export default Page;
+```
+
+### Contents
+
+In order to properly export the pages to the app, the Contents.jsx flie is necessary (It is like navigation.xml from the first iterations of WebFlavor). All it does is simply import every page, then export an array of arrays of those imports.
+
+Remembering what each export was [a JSON object] the export from this Contents.jsx will be an array of arrays of objects. The array itself represents a "table of contents" for the app. Every element is one chapter. Within each chapter could be multiple pages, thus another array.
+
+***Future iterations of WebFlavor may want to automize this process.***
+
+```
+import one_one from '../pages/1_1';
+import one_two from '../pages/1_2';
+import two from '../pages/2_1';
+import three from '../pages/3_1';
+import four from '../pages/4_1';
+import five from '../pages/5_1';
+import six from '../pages/6_1';
+import seven from '../pages/7_1';
+import eight from '../pages/8_1';
+
+const Contents = [
+  [one_one, one_two],
+  [two],
+  [three],
+  [four],
+  [five],
+  [six],
+  [seven],
+  [eight]
+];
+
+export default Contents;
+```
+
+
+
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
