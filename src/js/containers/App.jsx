@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Content from './Content';
-import Modal from './Modal';
+import Modals from './Modals';
 
 import * as Tracking from '../../api/TrackingFunctions';
 
@@ -17,6 +17,12 @@ import SETTINGS from '../../settings.json';
 const json = SETTINGS.settings;
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+  }
   componentWillMount() {
     //Before Rendering, start LMS and start up the app
     Tracking.StartLMS();
@@ -188,15 +194,10 @@ export class App extends Component {
     });
   }
 
-  openModal = () => {
-    console.log("HELKDSJLFKJSD");
-    document.getElementById('modalContainer').innerHTML = `<div class="modal fade show" id="Modal" role="dialog" aria-labelledby="ModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-        </div>
-      </div>
-    </div>`;
+  toggleModal = () => {
+    let tempState = this.state;
+    tempState.modal = !tempState.modal;
+    this.setState(tempState);
   }
 
   render(){
@@ -205,7 +206,7 @@ export class App extends Component {
         <React.Fragment>
           <Navigation
             openPage = {this.openPage}
-            openModal = {this.openModal}
+            toggleModal = {this.toggleModal}
           />
 
           <Content />
@@ -217,7 +218,10 @@ export class App extends Component {
             toc={this.props.store.chapters.length}
           />
 
-          <Modal />
+          <Modals
+            open={this.state.modal}
+            toggleModal={this.toggleModal}
+          />
 
         </React.Fragment>
       );

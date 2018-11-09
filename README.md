@@ -8,19 +8,22 @@ Last modified: 11/08/2018
 
 WebFlavor is a development framework for creating responsive HTML5 courses. WebFlavor 3.0, the latest version, is built with React/Redux for frontend UI and state management. The technologies and tools needed to be able to use WebFlavor will be discussed along with their role in this documentation.
 
-## Install
-The following technologies will need to be installed globally to your system to be able to develop
+## Install and Deploy
+The following technologies will need to be installed globally to your system to be able to develop and deploy
 * Node
 * Grunt
 * SASS/Ruby
+* Git
 
-After downloading or cloning the project from GitHub, ```npm install``` from the command line. After everything is installed, before starting development, the specific course needs to be initialized [if enhancing the framework, or not for LMS integration for a client, the following first step can be ignored].
+After downloading or cloning the project from GitHub, ```npm install``` from the command line. After everything is installed, the specific course needs to be initialized [if enhancing the framework, or not for LMS integration for a client, the following first step can be ignored].
 
 - First, access src/settings.json and set the course Title and SubTitle to the appropriate values, the run ```grunt init```.
 - Then to start up the development environment run ```npm start```.
-- Finally, after development, to build the project for production, run ```npm build```.
+- Finally, after development, to build the project for production, run ```npm run build```.
 
+In order to deploy an enhanced version of the framework back to GitHub, merge commits to master branch. Then, run ```npm run deploy``` from the command line. This will deploy the production build to a github-pages branch, which GitHub will server at the following link:
 
+https://jordanfarris.github.io/webflavor-react/
 
 
 ## Technology

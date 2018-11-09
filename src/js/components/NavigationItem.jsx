@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-//import DropDown from '../components/DropDown';
-
 import {
   NavItem,
   NavLink,
@@ -57,19 +55,5 @@ export class NavigationItem extends Component {
     }
   }
 }
-
-/*
-<li className={`courseTitleChapter ${selected}`}>
-  <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-    <DropdownToggle>{this.props.chapter[0].chapterTitle}</DropdownToggle>
-
-    <DropdownMenu>
-      {this.props.chapter.map((chapter, p) =>(
-        <DropdownItem key={p} onClick={()=>this.props.openPage(this.props.c, p)}>{chapter.title}</DropdownItem>
-      ))}
-    </DropdownMenu>
-  </Dropdown>
-</li>*/
-
 
 export default NavigationItem;

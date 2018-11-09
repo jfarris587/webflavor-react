@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import NavigationLinks from '../components/NavigationLinks';
+import NavigationItem from '../components/NavigationItem';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav} from 'reactstrap';
-
-import NavigationLinks from '../components/NavigationLinks';
-import NavigationItem from '../components/NavigationItem';
 
 export class Navigation extends Component {
   constructor(props) {
@@ -29,12 +28,19 @@ export class Navigation extends Component {
         <Navbar color="light" dark expand="md">
           <div className="nav-header container">
 
-            <div class="title">
+            <div className="title">
               <NavbarToggler onClick={this.toggle} />
 
-              <span class="titleMain">{this.props.TITLE}: </span>
-              <span class="titleSub">{this.props.SUB_TITLE}</span>
+              <span className="titleMain">{this.props.TITLE}: </span>
+              <span className="titleSub">{this.props.SUB_TITLE}</span>
             </div>
+
+            <NavigationLinks
+              hasGlossary={this.props.hasGlossary}
+              hasHelp={this.props.hasHelp}
+              hasResources={this.props.hasResources}
+              toggleModal={this.props.toggleModal}
+            />
           </div>
 
           <Collapse isOpen={this.state.isOpen} navbar>

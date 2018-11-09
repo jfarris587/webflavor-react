@@ -1,17 +1,16 @@
 {
   "settings": {
     "mode": "DEV",
-    "theme": "maroon",
-    "courseTitle": "HTML Template",
+    "courseTitle": "React Template",
     "courseSubTitle": "WebFlavor | GP Strategies",
     "menuPlacement": "top",
     "menuStyle": "tab",
     "hasMenuLogo": false,
     "hasFooter": true,
     "hasSplashPage": true,
-    "hasResources": false,
-    "hasGlossary": false,
-    "hasHelp": false,
+    "hasResources": true,
+    "hasGlossary": true,
+    "hasHelp": true,
     "courseStorageID": "htwgs_f2d00",
     "version": "3.1",
     "cookieName": "htwgs_f2d00"

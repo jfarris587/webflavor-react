@@ -9,7 +9,6 @@ nav.navbar{
     width: 100%;
     padding: 0;
     display: flex;
-    justify-content: flex-start;
 
     .navbar-toggler{
       border: none;
@@ -38,6 +37,26 @@ nav.navbar{
         color: #fff;
         line-height: 0px;
         text-transform: uppercase;
+      }
+    }
+
+    .headerLinks{
+      display: flex;
+      margin: 0;
+
+      li{
+        list-style: none;
+        a{
+          text-decoration: none;
+
+          img{
+            opacity: .30;
+
+            &:hover{
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }
