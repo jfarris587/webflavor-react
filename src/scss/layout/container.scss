@@ -188,11 +188,11 @@ div[class^="col"] {
 .color1 {
   height: 300px;
   opacity: .75;
-  background: maroon;
+  background: $primary;
 }
 
 .outline {
-  border: 1px solid maroon;
+  border: 1px solid $primary;
 }
 
 .size2 {

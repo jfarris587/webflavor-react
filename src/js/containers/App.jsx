@@ -17,12 +17,6 @@ import SETTINGS from '../../settings.json';
 const json = SETTINGS.settings;
 
 export class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-  }
   componentWillMount() {
     //Before Rendering, start LMS and start up the app
     Tracking.StartLMS();
@@ -194,19 +188,12 @@ export class App extends Component {
     });
   }
 
-  toggleModal = () => {
-    let tempState = this.state;
-    tempState.modal = !tempState.modal;
-    this.setState(tempState);
-  }
-
   render(){
     if(this.state !== null){
       return(
         <React.Fragment>
           <Navigation
             openPage = {this.openPage}
-            toggleModal = {this.toggleModal}
           />
 
           <Content />
@@ -218,11 +205,7 @@ export class App extends Component {
             toc={this.props.store.chapters.length}
           />
 
-          <Modals
-            open={this.state.modal}
-            toggleModal={this.toggleModal}
-          />
-
+          <Modals />
         </React.Fragment>
       );
     }

@@ -142,12 +142,12 @@ nav.navbar{
       box-shadow: none;
       border: none;
       background: none;
-      left: -12% !important;
-      top: -12px !important;
+      transform: translate(0%, 37px) !important;
 
 
       button{
-        width: 100%;
+        margin: auto;
+        max-width: 140px;
         text-align: center;
         background: none;
         font-weight: 100;

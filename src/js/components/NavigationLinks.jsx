@@ -6,7 +6,10 @@ const NavigationLinks = (props) => {
 
         {props.hasResources && (
           <li>
-            <a className="btnResources" onClick={props.toggleModal}>
+            <a className="btnResources" onClick={() => props.dispatch({
+              type: "TOGGLE_MODAL",
+              payload: "resources"
+            })}>
               <img style={{height: "50px", width: "auto"}} src="media/assets/resources.png" alt="resources"/>
             </a>
           </li>
@@ -14,7 +17,10 @@ const NavigationLinks = (props) => {
 
         {props.hasGlossary && (
           <li>
-            <a className="btnGlossary" onClick={props.toggleModal}>
+            <a className="btnGlossary" onClick={() => props.dispatch({
+              type: "TOGGLE_MODAL",
+              payload: "glossary"
+            })}>
               <img style={{height: "50px", width: "auto"}} src="media/assets/glossary.png" alt="glossary"/>
             </a>
           </li>
@@ -22,12 +28,14 @@ const NavigationLinks = (props) => {
 
         {props.hasHelp && (
           <li>
-            <a className="btnHelpModal" onClick={props.toggleModal}>
+            <a className="btnHelpModal" onClick={() => props.dispatch({
+              type: "TOGGLE_MODAL",
+              payload: "help"
+            })}>
               <img style={{height: "50px", width: "auto"}} src="media/assets/help.png" alt="help"/>
             </a>
           </li>
         )}
-
       </ul>
   );
 }

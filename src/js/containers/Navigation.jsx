@@ -22,6 +22,7 @@ export class Navigation extends Component {
     tempState.isOpen = !tempState.isOpen;
     this.setState(tempState);
   }
+
   render(){
     return (
       <div className="nav-container">
@@ -39,7 +40,7 @@ export class Navigation extends Component {
               hasGlossary={this.props.hasGlossary}
               hasHelp={this.props.hasHelp}
               hasResources={this.props.hasResources}
-              toggleModal={this.props.toggleModal}
+              dispatch={this.props.dispatch}              
             />
           </div>
 

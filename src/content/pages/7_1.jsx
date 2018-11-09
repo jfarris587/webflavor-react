@@ -1,123 +1,26 @@
 import React from "react";
-import KnowledgeCheck from '../../js/interactives/KnowledgeCheck';
 
-const title = "KNOWLEDGE CHECKS";
+const title = "MODAL FEATURES";
 
-const knowledgecheck_1 = {
-  title: "Review I",
-  questions: [
-    {
-      body: "The question body goes in this element. What answer is right?",
-      answers: [
-        {
-          answer: "A",
-          correct: false
-        },
-        {
-          answer: "B",
-          correct: false
-        },
-        {
-          answer: "RIGHT ANSWER",
-          correct: true
-        },
-        {
-          answer: "D",
-          correct: false
-        }
-      ]
-    },
-    {
-      body: "The question body goes in this element. What answer is right?",
-      answers: [
-        {
-          answer: "A",
-          correct: false
-        },
-        {
-          answer: "B",
-          correct: false
-        },
-        {
-          answer: "RIGHT ANSWER",
-          correct: true
-        },
-        {
-          answer: "D",
-          correct: false
-        }
-      ]
-    },
-  ]
-}
-
-const knowledgecheck_2 = {
-  title: "Review II",
-  questions: [
-    {
-      body: "The question body goes in this element. What answer is right?",
-      answers: [
-        {
-          answer: "A",
-          correct: false
-        },
-        {
-          answer: "B",
-          correct: false
-        },
-        {
-          answer: "RIGHT ANSWER",
-          correct: true
-        },
-        {
-          answer: "D",
-          correct: false
-        }
-      ]
-    },
-    {
-      body: "The question body goes in this element. What answer is right?",
-      answers: [
-        {
-          answer: "A",
-          correct: false
-        },
-        {
-          answer: "B",
-          correct: false
-        },
-        {
-          answer: "RIGHT ANSWER",
-          correct: true
-        },
-        {
-          answer: "D",
-          correct: false
-        }
-      ]
-    },
-  ]
-}
 
 const layout =
 <React.Fragment>
   <div className="row">
-    <div className="col-md-12">
-      <p className="top-paragraph">The following is a knowledge check to test your understanding of the course so far. You must attempt the quiz before advancing.</p>
+    <div className="col-md-6">
+      <h4>Custom Modal Interactive</h4>
+      <p>The custom modal interactive allows for any HTML markup to be placed into the modal when triggered by any other feature. This works by placing the custom HTML into the &lt;modal&gt; tag, and then naming the triggering functions in the same node.</p>
+      <p>To see an example of the custom interactive... </p>
+      <a className="download bolded">CLICK TO ACTIVATE MODAL</a>
 
-    </div>
-  </div>
+      <br/>
+      <br/>
 
-  <div className="row margin-below">
-    <div className="col-md-8">
-      <KnowledgeCheck
-        knowledgecheck={knowledgecheck_1}
-        />
+      <p>You can also have multiple modals on the same page like any other interactive...</p>
+      <a className="download bolded">CLICK TO ACTIVATE MODAL</a>
     </div>
-    <div className="col-md-4">
-      <KnowledgeCheck
-        knowledgecheck={knowledgecheck_2}
-        />
+
+    <div className="col-md-6">
+      <img src="media/img/2_1.jpg" alt="modal"/>
     </div>
   </div>
 </React.Fragment>;

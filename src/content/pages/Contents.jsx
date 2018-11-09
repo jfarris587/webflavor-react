@@ -7,6 +7,7 @@ import five from '../pages/5_1';
 import six from '../pages/6_1';
 import seven from '../pages/7_1';
 import eight from '../pages/8_1';
+import nine from '../pages/9_1';
 
 const Contents = [
   [one_one, one_two],
@@ -16,7 +17,8 @@ const Contents = [
   [five],
   [six],
   [seven],
-  [eight]
+  [eight],
+  [nine]
 ];
 
 export default Contents;
