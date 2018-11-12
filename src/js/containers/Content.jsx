@@ -17,13 +17,11 @@ export class Content extends Component {
   }
 
   render(){
+    var Page = this.props.page.Page;
     var completion = "";
-    var width = 12;
-    var pageNums = true;
+
     if(this.props.pageNum === this.props.pageTotal){
       completion = "completion";
-      width = 6;
-      pageNums = false;
     }
 
     return (
@@ -31,24 +29,15 @@ export class Content extends Component {
         <div id="contentContainer">
           <div id="pageContainer" className={`page-container ${completion}`}>
             <div id="pageContent" className="container">
-              <div className="row">
-                <div className={`col-sm-${width}`}>
-                  <h1 id="pageTitle">{this.props.page.title}</h1>
 
-                  {pageNums && (
-                    <div className="page-number">
-                      <span>{this.props.pageNum}</span> of <span>{this.props.pageTotal}</span>
-                    </div>
-                  )}
-                </div>
-              </div>
+              <Page />
 
-              {this.props.page.layout}
 
             </div>
           </div>
         </div>
       </div>
+
     );
   }
 }
@@ -56,10 +45,14 @@ export class Content extends Component {
 const mapStateToProps = (state) => {
   return {
     page: state.chapters[state.tracking.currentChapter][state.tracking.currentPage],
+
     pageNum: state.tracking.currentChapter + 1,
     pageTotal: state.chapters.length
   }
 }
+
+//    page: state.chapters[state.tracking.currentChapter][state.tracking.currentPage],
+
 
 export default connect(
   mapStateToProps

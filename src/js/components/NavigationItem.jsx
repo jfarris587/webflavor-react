@@ -32,7 +32,7 @@ export class NavigationItem extends Component {
       return (
         <NavItem className={selected} onClick={()=>this.props.openPage(this.props.c, 0)}>
           <NavLink>
-            {this.props.chapter[0].title}
+            {this.props.chapter[0].state.TITLE}
           </NavLink>
         </NavItem>
 
@@ -40,13 +40,13 @@ export class NavigationItem extends Component {
     }
     else{
       return (
-        <NavItem className={selected}>
+        <NavItem className={selected} onClick={this.toggle}>
           <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle>{this.props.chapter[0].chapterTitle}</DropdownToggle>
+            <DropdownToggle>{this.props.chapter[0].state.CHAPTER_TITLE}</DropdownToggle>
 
             <DropdownMenu>
               {this.props.chapter.map((chapter, p) =>(
-                <DropdownItem key={p} onClick={()=>this.props.openPage(this.props.c, p)}>{chapter.title}</DropdownItem>
+                <DropdownItem key={p} onClick={()=>this.props.openPage(this.props.c, p)}>{chapter.state.TITLE}</DropdownItem>
               ))}
             </DropdownMenu>
           </Dropdown>

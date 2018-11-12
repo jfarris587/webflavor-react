@@ -24,13 +24,13 @@
   .click {
     height: 100%;
     background: $primary;
-    color: #fff;
+    color: $secondary;
     padding: 0;
     cursor: pointer;
     width: 100%;
     padding: 5px;
     p {
-      color: #fff;
+      color: $secondary;
     }
   }
   .reveal {

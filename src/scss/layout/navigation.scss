@@ -26,7 +26,7 @@ nav.navbar{
       .titleMain{
         font-weight: 100;
         font-size: 28px;
-        color: #fff;
+        color: $secondary;
         line-height: 50px;
         text-transform: uppercase;
       }
@@ -34,7 +34,7 @@ nav.navbar{
       .titleSub{
         font-weight: 600;
         font-size: 28px;
-        color: #fff;
+        color: $secondary;
         line-height: 0px;
         text-transform: uppercase;
       }
@@ -64,13 +64,13 @@ nav.navbar{
   .navbar-collapse{
     margin: 0;
     padding: 0;
-    background: #fff;
+    background: $secondary;
     width: 100%;
 
 
     .navbar-nav{
       margin: 0 auto;
-      background: #fff;
+      background: $secondary;
       text-align: center;
       width: 100%;
       display: flex;
@@ -147,7 +147,7 @@ nav.navbar{
 
       button{
         margin: auto;
-        max-width: 140px;
+        max-width: 200px;
         text-align: center;
         background: none;
         font-weight: 100;
@@ -171,11 +171,11 @@ nav.navbar{
       border-bottom: 3px solid transparent;
       background: $primary;
       .nav-link{
-        color: #fff !important;
+        color: $secondary !important;
       }
 
       .dropdown > button{
-        color: #fff !important;
+        color: $secondary !important;
       }
     }
 

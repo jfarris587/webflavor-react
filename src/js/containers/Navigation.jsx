@@ -40,7 +40,7 @@ export class Navigation extends Component {
               hasGlossary={this.props.hasGlossary}
               hasHelp={this.props.hasHelp}
               hasResources={this.props.hasResources}
-              dispatch={this.props.dispatch}              
+              dispatch={this.props.dispatch}
             />
           </div>
 

@@ -20,7 +20,7 @@
       padding: 25px 5px;
       border-radius: 4px;
       display: flex;
-      border: 1px solid #fff;
+      border: 1px solid $secondary;
       cursor: default;
       width: 48%;
       margin-bottom: 15px;
@@ -57,7 +57,7 @@
     outline: 0;
     border: 0;
     background: #2b2b2b;
-    color: #fff;
+    color: $secondary;
     padding: 20px;
     font-weight: 600;
     font-size: 18px;

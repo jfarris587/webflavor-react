@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 
 export class VideoAudio extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-    }
-  }
-
-
   render(){
     const { videoAudio } = this.props;
 
@@ -28,7 +20,7 @@ export class VideoAudio extends Component {
 
         <p>{videoAudio.caption}</p>
         </div>
-      )}      
+      )}
       </div>
     );
   }

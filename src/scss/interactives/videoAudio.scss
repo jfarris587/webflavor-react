@@ -102,7 +102,7 @@ button.close {
   background: transparent;*/
   box-shadow: 0 0px 40px rgba(0, 0, 0, 0.4);
   height: auto;
-  background: #fff;
+  background: $secondary;
 
   iframe, object, embed {
     min-height: 200px;
@@ -133,7 +133,7 @@ button.close {
     display: table;
     height: 80px;
     width: 100%;
-    background-color: #fff;
+    background-color: $secondary;
     opacity: .9;
     padding: 0 20px;
     box-shadow: 0 0.5px 40px rgba(0, 0, 0, 0.1);
@@ -153,7 +153,7 @@ button.close {
       font-weight: 600;
       font-size: 20px;
       line-height: 80px;
-      color: #fff;
+      color: $secondary;
       padding: 0 20px;
       margin: 1px;
       height: 80px;
@@ -197,7 +197,7 @@ button.close {
         font-weight: 600;
         font-size: 18px;
         line-height: 22px;
-        color: #fff;
+        color: $secondary;
       }
     }
   }

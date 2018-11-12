@@ -167,7 +167,7 @@
       }
       &.model {
         padding-left: 5px;
-        border-left: 1px solid #fff;
+        border-left: 1px solid $secondary;
       }
       &.attr {
         margin-top: 5px;
@@ -290,7 +290,7 @@
     }
   }
   .retry-container button {
-    color: #fff;
+    color: $secondary;
     font-size: 24px;
   }
   .intro-screen {
@@ -299,7 +299,7 @@
       font-size: 20px;
     }
     button {
-      color: #fff;
+      color: $secondary;
       font-size: 24px;
       font-weight: 100;
     }
@@ -338,12 +338,12 @@
           font-weight: 600;
         }
         &.model {
-          color: #fff;
+          color: $secondary;
           font-size: 17px;
         }
       }
       p.attr {
-        color: #fff;
+        color: $secondary;
       }
     }
     .feedback-container p {
@@ -351,13 +351,13 @@
       text-align: right;
     }
     button {
-      color: #fff;
+      color: $secondary;
       font-size: 24px;
       font-weight: 100;
     }
   }
   .feedback > p {
-    color: #fff;
+    color: $secondary;
   }
   .assessment-content .feedback-container .feedback-details {
     font-size: 20px;
@@ -367,7 +367,7 @@
     }
   }
   .finish-screen button {
-    color: #fff;
+    color: $secondary;
     font-size: 24px;
   }
 }

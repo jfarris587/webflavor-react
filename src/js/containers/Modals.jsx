@@ -13,7 +13,7 @@ class Modals extends React.Component {
   render() {
     if(this.props.type === "glossary"){
       return (
-        <Modal isOpen={this.props.open} toggle={this.toggleModal} style={{marginTop:0, marginLeft:0}}>
+        <Modal className="navModals" isOpen={this.props.open} toggle={this.toggleModal} style={{margin: 0}}>
           <ModalBody>
             <h4 style={{display: "inline"}}>GLOSSARY</h4>
 
@@ -37,7 +37,7 @@ class Modals extends React.Component {
 
     if(this.props.type === "resources"){
       return (
-        <Modal isOpen={this.props.open} toggle={this.toggleModal} style={{marginTop:0, marginLeft:0}}>
+        <Modal className="navModals" isOpen={this.props.open} toggle={this.toggleModal} style={{margin: 0}}>
           <ModalBody>
             <h4 style={{display: "inline"}}>RESOURCES</h4>
 
@@ -51,8 +51,8 @@ class Modals extends React.Component {
             {this.props.resources.map((item,i)=>(
               <div key={i} className="gloss-item">
                 <h5>{item.term}</h5>
-                <p>{item.definition}</p>
                 <a target="blank" href={item.source} className="bolded">{item.name}</a>
+                <p>{item.definition}</p>
               </div>
             ))}
           </ModalBody>
@@ -62,7 +62,7 @@ class Modals extends React.Component {
 
     if(this.props.type === "help"){
       return (
-        <Modal isOpen={this.props.open} toggle={this.toggleModal} style={{marginTop:0, marginLeft:0}}>
+        <Modal className="navModals" isOpen={this.props.open} toggle={this.toggleModal} style={{margin: 0}}>
           <ModalBody>
             <h4 style={{display: "inline"}}>HELP</h4>
 
@@ -73,36 +73,38 @@ class Modals extends React.Component {
             </button>
             <hr/>
 
-            <div className="help-section">
-              <h5>NAVIGATION</h5>
-              <div className="help-item">
-                <h6>TABLE OF CONTENTS</h6>
-                <img src="media/assets/help_toc.png" alt="t.o.c. icon"/>
-                <p>Use this to navigate to different pages in the course.</p>
-              </div>
+            <h5>NAVIGATION</h5>
+            <p>Use this to navigate to different pages in the course.</p>
+            <img src="media/assets/help_toc.png" alt="t.o.c. icon"/>
 
-              <div className="help-item">
-                <h6>CONTENT AREA</h6>
-                <p>Content will appear here. Follow the on-screen instructions for videos or interactives. Some pages may scroll.</p>
-              </div>
+            <h6>PAGE COUNT</h6>
+            <p>Check your progress through the course.</p>
+            <img src="media/assets/help_page_count.png" alt="page count screen shot"/>
 
-              <div className="help-item">
-                <h6>PAGE COUNT</h6>
-                <img src="media/assets/help_page_count.png" alt="page count screen shot"/>
-                <p>Check your progress through the course.</p>
-              </div>
-
-              <div className="help-item">
-                <h6>BACK/NEXT BUTTONS</h6>
-                <img src="media/assets/help_back_next.png" alt="page count screen shot"/>
-                <p>Use these buttons to move forward or backward in the course.</p>
-              </div>
-            </div>
+            <h6>BACK/NEXT BUTTONS</h6>
+            <p>Use these buttons to move forward or backward in the course.</p>
+            <img src="media/assets/help_back_next.png" alt="page count screen shot"/>
           </ModalBody>
         </Modal>
       );
     }
 
+    if(this.props.type === "custom"){
+      return (
+        <Modal isOpen={this.props.open} toggle={this.toggleModal}>
+          <ModalBody>
+            <button type="button" className="close" onClick={this.toggleModal}>
+              <span aria-hidden="true">
+                <img src="media/assets/btn_close.png" alt="close the glossary"/>
+              </span>
+            </button>
+
+            {this.props.data}
+
+          </ModalBody>
+        </Modal>
+      );
+    }
     else{
       return null;
     }
@@ -113,6 +115,7 @@ const mapStateToProps = (state) => {
   return {
     open: state.tracking.modal.open,
     type: state.tracking.modal.type,
+    data: state.tracking.modal.data,
     glossary: state.glossaryData,
     resources: state.resourcesData,
   }

@@ -5,7 +5,8 @@ var trackingDefaultState = {
   currentPage: 0,
   modal: {
     open: false,
-    type: "glossary"
+    type: "glossary",
+    data: null
   }
 };
 
@@ -29,6 +30,7 @@ export default (state = trackingDefaultState, action) => {
     case 'TOGGLE_MODAL':
       tempState.modal.open = !tempState.modal.open;
       tempState.modal.type = action.payload;
+      tempState.modal.data = action.data;
       return tempState;
   }
 }

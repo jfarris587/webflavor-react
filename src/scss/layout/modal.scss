@@ -1,0 +1,22 @@
+.navModals{
+  height: 100%;
+
+  .modal-content{
+    min-height: 100%;
+  }
+
+  h5{
+    color: $primary;
+    font-size: 17px;
+  }
+
+  p{
+    font-weight: 100;
+    font-size: 15px;
+  }
+
+  img{
+    width: auto;
+    margin-bottom: 20px;
+  }
+}

@@ -7,7 +7,6 @@ import trackingReducer from '../reducers/tracking';
 import splashReducer from '../reducers/splash';
 import glossaryReducer from '../reducers/glossary';
 import resourcesReducer from '../reducers/resources';
-import modalReducer from '../reducers/modal';
 
 import interactivesReducer from '../reducers/interactives';
 
@@ -22,7 +21,6 @@ export default () => {
       glossaryData: glossaryReducer,
       resourcesData: resourcesReducer,
       splashData: splashReducer,
-      modalData: modalReducer
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   );

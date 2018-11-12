@@ -1,8 +1,9 @@
-@import "vendors/main.css";
+@import "vendors/bootstrap.min.css";
 @import "base/variables.scss";
 
 @import "base/variables.scss";
 @import "base/utilities.scss";
+@import "base/typography.scss";
 
 @import "interactives/vehicle.scss";
 @import "interactives/card.scss";
@@ -14,18 +15,16 @@
 @import "interactives/thumbnail.scss";
 @import "interactives/videoAudio.scss";
 @import "interactives/game.scss";
-@import "interactives/Modal.scss";
 
 @import "components/button.scss";
 @import "components/text.scss";
 
 @import "layout/container.scss";
 @import "layout/footer.scss";
-@import "layout/glossary.scss";
-@import "layout/help.scss";
 @import "layout/navigation.scss";
-@import "layout/resources.scss";
 @import "layout/splash.scss";
+@import "layout/modal.scss";
+
 
 html {
   height: 100%;

@@ -8,7 +8,7 @@ import Modals from './Modals';
 
 import * as Tracking from '../../api/TrackingFunctions';
 
-import Contents from '../../content/pages/Contents';
+import * as Pages from '../../content/pages';
 import Glossary from '../../content/Glossary';
 import Resources from '../../content/Resources';
 import Splash from '../../content/Splash';
@@ -64,7 +64,7 @@ export class App extends Component {
     }
     else{
       await this.setSettingsState();
-
+      await this.setChapterState();
       await this.setGlossaryState();
       await this.setResoucesState();
       await this.setSplashState();
@@ -81,8 +81,6 @@ export class App extends Component {
       TITLE: json.courseTitle,
       SUB_TITLE: json.courseSubTitle,
       SETTINGS_VERSION: json.version,
-      THEME: json.theme,
-      THEME_PATH: "view/themes/" + json.theme,
       COOKIE_NAME: json.cookieName,
       MENU_PLACEMENT: json.menuPlacement,
       MENU_STYLE: json.menuStyle,
@@ -108,10 +106,40 @@ export class App extends Component {
       type: "SET_SETTINGS",
       payload: settingsDefaultState
     });
+  }
+
+  setChapterState = () => {
+    var totalPages = Object.keys(Pages).length;
+
+    var currentPage = 11;
+    var currentIndex = 0;
+    var c = [[Pages[currentPage]]];
+
+    while(currentIndex < totalPages){
+      if(Pages[currentPage+1]){
+        if(c[currentIndex]){
+          c[currentIndex].push(Pages[currentPage+1]);
+          //c[currentIndex].push(currentPage+1);
+
+        }
+        else{
+          c[currentIndex] = [];
+          c[currentIndex].push(Pages[currentPage+1]);
+          //c[currentIndex].push(currentPage+1);
+
+        }
+        currentPage+=1;
+
+      }
+      else {
+        currentPage=(currentIndex+2)*10;
+        currentIndex += 1;
+      }
+    }
 
     this.props.dispatch({
       type: "SET_CHAPTERS",
-      payload: Contents
+      payload: c
     });
   }
 

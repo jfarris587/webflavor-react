@@ -1,185 +1,78 @@
-import React from "react";
-import FlipCard from "../../js/interactives/FlipCard";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PageTitle from '../../js/components/PageTitle';
 
-const title = "FLIP CARDS";
+const state = {
+  TITLE: "MODAL",
+  CHAPTER_TITLE: "MODAL",
 
-const flipcard_1 = {
-  card: [
-    {
-      front: <h4>Nullam Nisi</h4>,
-      back: <p>Curabitur accumsan, orci mostie cond aliquam, eros eros elementum ex.
-        <br/>
-        <br/>
-        Pellentesque id arcu sed est vulputate consequat nec id dolor.</p>
-    },
-    {
-      front: <h4>Curabitur</h4>,
-      back: <p>Fermentum et venenatis in, vulputate sit amet diam
-      <br/>
-      <br/>
-      Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-    }
-  ]
-}
+  modalHTML_1: (<React.Fragment>
+    <h1>MODAL DEMO I</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="media/img/gate.png" alt="logo"/>
+  </React.Fragment>),
 
-const flipcard_2 = {
-    card: [
-      {
-        minHeight: 400,
-        background: "media/img/4_1.jpg",
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        minHeight: 400,
-        background: "media/img/4_2.jpg",
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      }
-    ]
-  }
-
-const flipcard_3 = {
-    card: [
-      {
-        minHeight: 400,
-        background: "media/img/4_3.jpg",
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        minHeight: 400,
-        background: "media/img/4_4.jpg",
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      }
-    ]
-  }
-
-const flipcard_4 = {
-    card: [
-      {
-        front: <h4>Curabitur</h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        front: <h4>Curabitur</h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        minHeight: 0,
-        front: <h4>Curabitur</h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        minHeight: 0,
-        front: <h4>Curabitur</h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      }
-    ]
-  }
-
-const flipcard_5 = {
-    card: [
-      {
-        front: <h4>Nullam Nisi</h4>,
-        back: <p>Curabitur accumsan, orci mostie cond aliquam, eros eros elementum ex.
-          <br/>
-          <br/>
-          Pellentesque id arcu sed est vulputate consequat nec id dolor.</p>
-      },
-      {
-        front: <h4>This test shows that the front height can dictate the height of the entire flip card and is dynamic css code for
-        <br/><br/>
-        </h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      },
-      {
-        front: <h4>Curabitur</h4>,
-        back: <p>Fermentum et venenatis in, vulputate sit amet diam
-        <br/>
-        <br/>
-        Ut a tortor turpis. Aliquam quis enim at metus commodo hendrerit sit amet eu nisi.</p>
-      }
-    ]
-  }
-
-const layout =
-  <React.Fragment>
-    <div className="row">
-      <div className="col-sm-12">
-        <p>Flip Cards are another interactive component that can be implemented through the WebFlavor Template</p>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-md-8">
-        <FlipCard
-          flipcard={flipcard_1}
-        />
-      </div>
-
-      <div className="col-md-4">
-        <p>The Flip Card component can have either a clickable button to flip the card, or it can have the user click anywhere on the card instead. This is declared in the element's xml tags. The flip card to the left shows the how it works with this feature instead of the button</p>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-md-12">
-        <FlipCard
-          flipcard={flipcard_2}
-        />
-      </div>
-
-      <div className="col-md-12">
-        <FlipCard
-          flipcard={flipcard_3}
-        />
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-md-12">
-        <FlipCard
-          flipcard={flipcard_4}
-        />
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-md-4">
-        <p>Flip Card component can be broken up and placed anywhere on the page. The sizing is dynamic and dependent on how many Flip Cards are in each section, and they span the width of the container they are placed in. The four flip cards above are one full component. The two thumbnails to the right are also one full component. One component takes up the entire continer it is in. By diving columns into more rows/columns, you can place them practically anywhere. You can split up flip cards into as many components as needed for the layout of the page</p>
-      </div>
-      <div className="col-md-8">
-        <FlipCard
-          flipcard={flipcard_5}
-        />
-      </div>
-    </div>
-  </React.Fragment>
-
-const Page = {
-  title,
-  layout,
+  modalHTML_2: (<React.Fragment>
+    <h1>MODAL DEMO II</h1>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <img src="media/img/WebFlavorLogo.jpg" alt="logo"/>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </React.Fragment>),
 };
 
-export default Page;
+class Page extends Component {
+  render(){
+    return (
+      <React.Fragment>  
+        <PageTitle
+          title={state.TITLE}
+          pageNum={this.props.pageNum}
+          pageTotal={this.props.pageTotal}
+        />
+
+        <div className="row">
+          <div className="col-md-6">
+            <h4>Custom Modal Interactive</h4>
+            <p>The custom modal interactive allows for any HTML markup to be placed into the modal when triggered by any other feature. This works by placing the custom HTML into the &lt;modal&gt; tag, and then naming the triggering functions in the same node.</p>
+            <p>To see an example of the custom interactive... </p>
+            <a className="download bolded" onClick={()=> this.props.dispatch({
+              type: "TOGGLE_MODAL",
+              payload: "custom",
+              data: state.modalHTML_1
+            })}>CLICK TO ACTIVATE MODAL</a>
+
+            <br/>
+            <br/>
+
+            <p>You can also have multiple modals on the same page like any other interactive...</p>
+              <a className="download bolded" onClick={()=> this.props.dispatch({
+                type: "TOGGLE_MODAL",
+                payload: "custom",
+                data: state.modalHTML_2
+              })}>CLICK TO ACTIVATE MODAL</a>
+            </div>
+
+          <div className="col-md-6">
+            <img src="media/img/2_1.jpg" alt="modal"/>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    pageNum: state.tracking.currentChapter + 1,
+    pageTotal: state.chapters.length
+  }
+}
+
+const data = {
+  state,
+  Page: connect(
+    mapStateToProps
+  )(Page)
+}
+
+export default data;
