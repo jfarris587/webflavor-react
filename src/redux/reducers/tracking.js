@@ -7,7 +7,8 @@ var trackingDefaultState = {
     open: false,
     type: "glossary",
     data: null
-  }
+  },
+  splash: true
 };
 
 /*------------------------------------------------------*/
@@ -31,6 +32,10 @@ export default (state = trackingDefaultState, action) => {
       tempState.modal.open = !tempState.modal.open;
       tempState.modal.type = action.payload;
       tempState.modal.data = action.data;
+      return tempState;
+
+    case 'EXIT_SPLASH':
+      tempState.splash = !tempState.splash;
       return tempState;
   }
 }

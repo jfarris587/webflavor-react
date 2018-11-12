@@ -5,13 +5,14 @@ import Navigation from './Navigation';
 import Footer from './Footer';
 import Content from './Content';
 import Modals from './Modals';
+import Splash from './Splash';
 
 import * as Tracking from '../../api/TrackingFunctions';
 
 import * as Pages from '../../content/pages';
 import Glossary from '../../content/Glossary';
 import Resources from '../../content/Resources';
-import Splash from '../../content/Splash';
+import SplashPage from '../../content/Splash';
 
 import SETTINGS from '../../settings.json';
 const json = SETTINGS.settings;
@@ -41,8 +42,13 @@ export class App extends Component {
           type: "OPEN_PAGE",
           payload: [bmChapter,bmPage]
         });
-      }
 
+        if(bmChapter !== 0 || bmPage !== 0){
+          this.props.dispatch({
+            type: "EXIT_SPLASH",
+          })
+        }
+      }
     }
   }
 
@@ -163,7 +169,7 @@ export class App extends Component {
     //Set Redux state from the imported Splash Object
     this.props.dispatch({
       type: "SET_SPLASH",
-      payload: Splash
+      payload: SplashPage
     });
   }
 
@@ -218,24 +224,31 @@ export class App extends Component {
 
   render(){
     if(this.state !== null){
-      return(
-        <React.Fragment>
-          <Navigation
-            openPage = {this.openPage}
-          />
+      if(this.props.hasSplash && this.props.showSplash && this.props.currentChapter === 0 && this.props.currentPage === 0){
+        return <Splash />
+      }
+      else{
+        return(
+          <React.Fragment>
+            <Navigation
+              openPage = {this.openPage}
+            />
 
-          <Content />
+            <Content />
 
-          <Footer
-            nextPage={this.nextPage}
-            prevPage={this.prevPage}
-            currentChapter={this.props.store.tracking.currentChapter}
-            toc={this.props.store.chapters.length}
-          />
+            {this.props.hasFooter &&
+              <Footer
+                nextPage={this.nextPage}
+                prevPage={this.prevPage}
+                currentChapter={this.props.currentChapter}
+                toc={this.props.store.chapters.length}
+              />
+            }
 
-          <Modals />
-        </React.Fragment>
-      );
+            <Modals />
+          </React.Fragment>
+        );
+      }
     }
     else{
       return null;
@@ -246,6 +259,11 @@ export class App extends Component {
 const mapStateToProps = (state) => {
   return {
     store: state,
+    currentPage: state.tracking.currentPage,
+    currentChapter: state.tracking.currentChapter,
+    showSplash: state.tracking.splash,
+    hasSplash: state.settings.HAS_SPLASH_PAGE,
+    hasFooter: state.settings.HAS_FOOTER
   }
 }
 

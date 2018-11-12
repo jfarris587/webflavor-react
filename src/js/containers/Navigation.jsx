@@ -32,6 +32,8 @@ export class Navigation extends Component {
             <div className="title">
               <NavbarToggler onClick={this.toggle} />
 
+              {this.props.hasLogo && <img className="navLogo" src="media/assets/logo.png" alt="logo"/>}
+
               <span className="titleMain">{this.props.TITLE}: </span>
               <span className="titleSub">{this.props.SUB_TITLE}</span>
             </div>
@@ -80,6 +82,7 @@ const mapStateToProps = (state) => {
     hasGlossary: state.settings.HAS_GLOSSARY,
     hasResources: state.settings.HAS_RESOURCES,
     hasHelp: state.settings.HAS_HELP,
+    hasLogo: state.settings.HAS_MENU_LOGO
   }
 }
 

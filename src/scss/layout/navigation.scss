@@ -22,12 +22,19 @@ nav.navbar{
 
     .title{
       background:none;
+      display: flex;
+      align-items: center;
+
+      .navLogo{
+        width: auto;
+        margin-right: 10px;
+      }
 
       .titleMain{
         font-weight: 100;
         font-size: 28px;
         color: $secondary;
-        line-height: 50px;
+        line-height: 23px;
         text-transform: uppercase;
       }
 
@@ -35,7 +42,7 @@ nav.navbar{
         font-weight: 600;
         font-size: 28px;
         color: $secondary;
-        line-height: 0px;
+        line-height: 23px;
         text-transform: uppercase;
       }
     }
@@ -228,7 +235,7 @@ nav.navbar{
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 991px) {
   nav.navbar{
     .nav-header{
       .title{
@@ -238,10 +245,12 @@ nav.navbar{
 
         .titleMain{
           font-size: 16px;
+          line-height: 16px;
         }
 
         .titleSub{
           font-size: 16px;
+          line-height: 16px;
         }
       }
     }

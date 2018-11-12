@@ -5,7 +5,7 @@
     "courseSubTitle": "WebFlavor | GP Strategies",
     "menuPlacement": "top",
     "menuStyle": "tab",
-    "hasMenuLogo": false,
+    "hasMenuLogo": true,
     "hasFooter": true,
     "hasSplashPage": true,
     "hasResources": true,

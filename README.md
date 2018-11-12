@@ -202,38 +202,6 @@ const Page = {
 export default Page;
 ```
 
-### Contents
-
-In order to properly export the pages to the app, the Contents.jsx flie is necessary (It is like navigation.xml from the first iterations of WebFlavor). All it does is simply import every page, then export an array of arrays of those imports.
-
-Remembering what each export was [a JSON object], the export from this Contents.jsx will be an array of arrays of objects. The array itself represents a "table of contents" for the app. Every element is one chapter. Within each chapter could be multiple pages, thus another array.
-
-***Future iterations of WebFlavor may want to automize this process.***
-
-```
-import one_one from '../pages/1_1';
-import one_two from '../pages/1_2';
-import two from '../pages/2_1';
-import three from '../pages/3_1';
-import four from '../pages/4_1';
-import five from '../pages/5_1';
-import six from '../pages/6_1';
-import seven from '../pages/7_1';
-import eight from '../pages/8_1';
-
-const Contents = [
-  [one_one, one_two],
-  [two],
-  [three],
-  [four],
-  [five],
-  [six],
-  [seven],
-  [eight]
-];
-
-export default Contents;
-```
 
 ## Redux Architecture
 The next fundamental block is Redux and its role in WebFlavor. As discussed, it is a state container that holds the overall state [settings] of the app. Any changes to the state go through Redux. After learning redux, you will see the concept of **Reducers**. WebFlavor is broken up into several reducers:

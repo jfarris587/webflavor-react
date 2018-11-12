@@ -12,7 +12,13 @@ export class Content extends Component {
   calculateHeight = () => {
     var windowHeight = window.innerHeight;
     var navHeight = document.getElementsByClassName("navbar")[0].offsetHeight;
-    var footerHeight = document.getElementsByClassName("footer")[0].offsetHeight;
+    var footerHeight = document.getElementsByClassName("footer")[0];
+    if(footerHeight){
+      footerHeight = footerHeight.offsetHeight;
+    }
+    else{
+      footerHeight = 0;
+    }
     document.getElementById("contentContainer").style.height = windowHeight - navHeight - footerHeight+1+"px";
   }
 
