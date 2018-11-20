@@ -1,5 +1,5 @@
 # WebFlavor 3.0 Course Template
-![N|Solid](https://i.imgur.com/9qcQumf.png)
+![N|Solid](https://i.imgur.com/K6NuvXA.png)
 
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
