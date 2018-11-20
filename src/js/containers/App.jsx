@@ -77,30 +77,25 @@ export class App extends Component {
 
     }
 
-    console.log("STARTING APPLICATION: " + json.mode, this.props.store);
+    console.log("STARTING APPLICATION: " + process.env.NODE_ENV, this.props.store);
     this.setState({ready: true});
   }
 
   setSettingsState = async () => {
     var settingsDefaultState = {
-      MODE: json.mode,
       TITLE: json.courseTitle,
       SUB_TITLE: json.courseSubTitle,
       SETTINGS_VERSION: json.version,
       COOKIE_NAME: json.cookieName,
-      MENU_PLACEMENT: json.menuPlacement,
-      MENU_STYLE: json.menuStyle,
       HAS_MENU_LOGO: json.hasMenuLogo,
       HAS_FOOTER: json.hasFooter,
       HAS_GLOSSARY: json.hasGlossary,
       HAS_RESOURCES: json.hasResources,
       HAS_HELP: json.hasHelp,
       HAS_SPLASH_PAGE: json.hasSplashPage,
-      HAS_INTERACTIVE_COMPLETION: json.hasInteractiveCompletion,
       SETTINGS_LOADED: false,
       INTERACTIVES_TOTAL: 0,
       INTERACTIVES_COMPLETED: 0,
-      COUNT_PAGES: json.hasCountPages
     };
 
     if(settingsDefaultState.COUNT_PAGES === "true") {

@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
 import configureStore from '../redux/store/configureStore';
 import App from './containers/App.jsx';
 import '../scss/style.scss';
 
-const store = configureStore();
+const redux = configureStore();
 
-store.subscribe(()=>{
+redux.store.subscribe(()=>{
   //console.log("STATE CHANGED:", store.getState());
 
   //***************************
@@ -19,8 +20,11 @@ store.subscribe(()=>{
 });
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Provider store={redux.store}>
+    <PersistGate loading={null} persistor={redux.persistor}>
+      <App />
+    </PersistGate>
+  </Provider>
+  ,
   document.getElementById('root')
 );

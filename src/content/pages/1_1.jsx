@@ -32,14 +32,6 @@ const state = {
 };
 
 class Page extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isOpen: false
-    };
-  }
-
   render(){
     return (
       <React.Fragment>

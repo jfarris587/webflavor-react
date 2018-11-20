@@ -1,10 +1,7 @@
 {
   "settings": {
-    "mode": "DEV",
     "courseTitle": "React Template",
     "courseSubTitle": "WebFlavor | GP Strategies",
-    "menuPlacement": "top",
-    "menuStyle": "tab",
     "hasMenuLogo": true,
     "hasFooter": true,
     "hasSplashPage": true,

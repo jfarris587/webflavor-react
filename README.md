@@ -162,44 +162,80 @@ The next important directory to understand is the content directory, which is wh
 
 ### Pages
 
-Below is an example of one page. Imported is React, which should always be the case, but the Hotspot is also imported since it is used on this particular page. **const layout** is the variable is the layout of the page, using bootstrap grid and any html content you wish to add [since it is React, you must use JSX equivalent of HTML].
+Below is an example of one page's code. Imported is React, which should always be the case, along with { connect } and PageTitle. But the Hotspot is also imported since it is used on this particular page. Each page is technically a class-based component. Each page has its own "state" which contains the title, chapter title, and any interactive data to be used.
 
-To add interactive components, after importing it, you will need a variable to set its data. You can see the ```<Hotspot />``` component is added wherever desired in the layout. In addition, it needs its specific data passed as a prop via the hotspot prop. We set the data to whatever we like in the variable ```const hotspot_1``` then pass it to the prop. [in this example it is blank]
+**NOTE:** *The state is a variable outside of the class, therefore, it is technically not a conventional "state" of the component like a normal React class. In this case, it is simply a variable object that is used. This is because the state and the component itself must be exported separately, which is why the state exists outside the class. The reason why they need to be separate, is because the Navigation needs to know the chapter titles. And then the page renders the Page component class*
+
+To add interactive components, after importing it, you will need to set its data inside the state object. You can see the ```<Hotspot />``` component is added wherever desired in the layout. In addition, it needs its specific data passed as a prop via the hotspot prop. The prop name is 'hotspot' and we pass it the corresponding data from our state by doing: ```hotspot={state.hotspot_1}```
 
 Every interactive has a predefined object for the data, and can be seen on the demo pages. To appropriately render the interactive, it must maintain that structure. In conclusion, this is what the page jsx file looks like. All the variables you set, then are exported as a JSON object.
 
 ```
-import React from "react";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PageTitle from '../../js/components/PageTitle';
 import Hotspot from '../../js/interactives/Hotspot';
 
-const chapterTitle = "WEBFLAVOR 3.0";
-const title = "3.0 FRAMEWORK";
+const state = {
+  TITLE: "WEBFLAVOR 3.0",
+  CHAPTER_TITLE: "WEBFLAVOR",
 
-const hotspot_1 = {}
+  hotspot_1: {
+    img: 'media/img/City-Map-2.jpg',
+    spots:[
+      <ul>
+        <li>Vix debitis lucilius ut, quo id porro timeam honestatis.</li>
+      </ul>,
 
-const layout =
-    <React.Fragment>
-      <div className="row margin-below">
-        <div className="col-lg-6">
-          <h1>ADAPTABLE INTERACTIVES</h1>
-          <p>One of the key features of WebFlavor...</p>
-        </div>
-
-        <div className="col-lg-6">
-          <Hotspot
-            hotspot={hotspot_1}
-          />
-        </div>
-      </div>
-    </React.Fragment>;
-
-const Page = {
-  chapterTitle,
-  title,
-  layout,
+      <ul>
+        <li>Vix debitis lucilius ut, quo id porro timeam honestatis.</li>
+      </ul>,
+    ]
+  }
 };
 
-export default Page;
+class Page extends Component {
+  render(){
+    return (
+      <React.Fragment>
+        <PageTitle
+          title={state.TITLE}
+          pageNum={this.props.pageNum}
+          pageTotal={this.props.pageTotal}
+        />
+
+        <div className="row margin-below">
+          <div className="col-lg-3">
+            <Hotspot
+              hotspot={state.hotspot_1}
+            />
+          </div>
+
+          <div className="col-lg-9">
+            <h1>React JS</h1>
+            <p>React JS elimintates the need for JQuery and removes direct DOM manipulation.</p>
+          </div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    pageNum: state.tracking.currentChapter + 1,
+    pageTotal: state.chapters.length
+  }
+}
+
+const data = {
+  state,
+  Page: connect(
+    mapStateToProps
+  )(Page)
+}
+
+export default data;
 ```
 
 
@@ -225,3 +261,9 @@ this.props.dispatch({
 ```
 
 The initial app state is show in the console.log at the start of the course. If the developer wishes to see it on every state change, they can console.log() the state from index.js within the subscribe method.
+
+### Persisting State
+
+In order to have the state persist through reloads and on browser closes, the application implements Redux Persist, which is a library for using localStorage in the background to persist the data. All data within the Redux state will be persisted, however, data that lies in component states, will not be persisted.
+
+Therefore, if a button is clicked and has its state changed to "color: blue" then on the refresh it will go back to its default color. This is because that buttons state was not from the Redux state. Any and all data that is critical for the application as a whole should be contained within the Redux state. For example, to try this, the state of the modal is contained within the Redux state, if you open the glossary, then refresh, it will still be open.
