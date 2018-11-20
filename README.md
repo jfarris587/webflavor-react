@@ -1,7 +1,7 @@
 # WebFlavor 3.0 Course Template
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+![N|Solid](https://i.imgur.com/9qcQumf.png)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
 **Jordan Farris**
 Last modified: 11/08/2018
