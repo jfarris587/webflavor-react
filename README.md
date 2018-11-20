@@ -29,13 +29,13 @@ https://jordanfarris.github.io/webflavor-react/
 ## Technology
 In order to develop with WebFlavor, enhance the framework, and add features, the developer must have adequate knowledge about React, Redux, Bootstrap grid, and how extra tools (create-react-app, reactstrap) work along side these techs. The following is a basic overview of why each technology is used and its overall purpose.
 
-* [ReactJS](https://reactjs.org/) - HTML enhanced for web apps!
-* [Redux](https://redux.js.org/) - awesome web-based text editor
-* [Bootstrap](https://getbootstrap.com/) - Markdown parser done right. Fast and easy to extend.
-* [SCSS](https://sass-lang.com/) - great UI boilerplate for modern web apps
-* [Grunt](https://gruntjs.com/) - evented I/O for the backend
-* [Create React App](https://github.com/facebook/create-react-app) - fast node.js network app framework [@tjholowaychuk]
-* [ReactStrap](https://reactstrap.github.io/components/navbar/#NavbarToggler) - the streaming build system
+* [ReactJS](https://reactjs.org/) - JavaScript UI Framework
+* [Redux](https://redux.js.org/) - State Management Library
+* [Bootstrap](https://getbootstrap.com/) - CSS Class Library
+* [SCSS](https://sass-lang.com/) - CSS Preprocessor
+* [Grunt](https://gruntjs.com/) - JavaScript Task Runner
+* [Create React App](https://github.com/facebook/create-react-app) - React App Configuration Build [@tjholowaychuk]
+* [ReactStrap](https://reactstrap.github.io/components/navbar/#NavbarToggler) - Bootstrap/React Library
 
 ### React
 
